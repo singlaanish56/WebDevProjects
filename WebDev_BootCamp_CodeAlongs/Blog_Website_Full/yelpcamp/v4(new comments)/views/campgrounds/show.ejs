@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+<h1><%= campg.name %></h1>
+
+
+<img src ="<%= campg.image %>">
+
+<p><%= campg.description%></p>
+<p>
+    <a class="btn btn-success" href="/campgrounds/<%=campg._id%>/comments/new">Add a new Comment</a>
+    
+</p>
+<% campg.comments.forEach(function(comment){ %>
+    <p><strong><%= comment.author %></strong> - <%= comment.text %></p> 
+<% }); %>
+
+<a href="/campgrounds">Back</a>
+
+
+
+<% include ../partials/footer %>
